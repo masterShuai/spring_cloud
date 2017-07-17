@@ -1,8 +1,9 @@
 package com.learn.cloud.client;
 
 
-import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author 王帅
@@ -15,7 +16,6 @@ public interface SchedualServiceHi {
 //    @RequestMapping(value = "/hi",method = RequestMethod.GET)
 //    String sayHiFromClientOne(@RequestParam(value = "name") String name);
 
-//    @RequestMapping(value = "/hello",method = RequestMethod.GET)
-    @RequestLine("GET /hello")
+    @RequestMapping(value = "/hello",method = RequestMethod.GET)
     String getHello();
 }
