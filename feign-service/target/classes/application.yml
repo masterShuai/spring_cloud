@@ -9,5 +9,5 @@ spring:
     name: service-feign
 
 feign:
-  hysrix:
+  hystrix:
     enabled: false

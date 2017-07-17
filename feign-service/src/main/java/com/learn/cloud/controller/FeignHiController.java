@@ -18,8 +18,7 @@ public class FeignHiController {
 
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     public String sayHi(@RequestParam final String name){
-//        return schedualServiceHi.sayHiFromClientOne(name);
-        return  "test";
+        return schedualServiceHi.sayHiFromClientOne(name);
     }
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String sayHello(@RequestParam final String name) {
