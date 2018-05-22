@@ -6,7 +6,7 @@
 	<groupId>com.learn.cloud</groupId>
 	<artifactId>spring_cloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>spring_cloud</name>
 	<description>Demo project for Spring Boot</description>
@@ -18,24 +18,37 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+    <modules>
+        <module>eureka-server</module>
+    </modules>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>springloaded</artifactId>
-			<version>1.2.5.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<!--子组件-->
+			<dependency>
+				<groupId>com.learn.cloud</groupId>
+				<artifactId>eureka-server</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!--公共依赖-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>springloaded</artifactId>
+				<version>1.2.5.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
