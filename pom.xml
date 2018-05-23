@@ -20,12 +20,15 @@
 
     <modules>
         <module>eureka-server</module>
+        <module>erueka-client</module>
+        <module>erueka-client-test</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Dalston.SR1</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -34,6 +37,16 @@
             <dependency>
                 <groupId>com.learn.cloud</groupId>
                 <artifactId>eureka-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.learn.cloud</groupId>
+                <artifactId>erueka-client</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.learn.cloud</groupId>
+                <artifactId>erueka-client-second</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--公共依赖-->
@@ -47,6 +60,18 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>1.5.8.RELEASE</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                <version>1.3.5.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
