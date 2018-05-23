@@ -7,4 +7,4 @@ server:
   port: 8764
 spring:
   application:
-    name: service-ribbon
+    name: ribbon-balancer
